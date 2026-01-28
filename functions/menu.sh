@@ -43,7 +43,7 @@ show_disk_usage() {
     df -h | tail -n +2 | while read line; do 
         use_percent=$(echo $line | awk '{print $5}' | sed 's/%//')
         if [[ $use_percent -gt 80 ]]; then
-	    print_clour $RED "Warning: $(echo $line | awk 'print $1') is ${use_percent}% full"
+	    print_colour $RED "Warning: $(echo $line | awk 'print $1') is ${use_percent}% full"
         fi
 
     done
